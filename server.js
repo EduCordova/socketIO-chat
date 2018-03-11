@@ -3,7 +3,7 @@ var app = express()
 var server = require('http').Server(app)
 var io = require('socket.io')(server)
 
-//var port = process.env.PORT || 3001
+var port = process.env.PORT || 3001
 
 app.use(express.static('client'));
 
@@ -30,6 +30,6 @@ io.on('connection',function(socket){
     })
 })
 
-server.listen(6677,()=>{
-    console.log('El servidor esta corriendo... en 6677')
+server.listen(port,()=>{
+    console.log('El servidor esta corriendo... en ' + port)
 })
